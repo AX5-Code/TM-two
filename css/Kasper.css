@@ -389,7 +389,7 @@ a {
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: cover;
-	height: 600px;
+	height: 500px;
 	position: relative;
 	overflow: hidden;
 }
@@ -467,6 +467,7 @@ a {
 	padding: 7px 15px;
 	font-size: 10px;
 	letter-spacing: 1.5px;
+	cursor: pointer;
 
 }
 
@@ -488,4 +489,19 @@ a {
 	border-radius: 2px;
 	font-size: 14px;
 	letter-spacing: 2px;
+	cursor: pointer;
+	margin: 10px 0;
+}
+
+.portfolio .photos img {
+	width: 300px;
+	height: 200px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.portfolio .photos {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
