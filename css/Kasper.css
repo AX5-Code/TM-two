@@ -498,6 +498,8 @@ a {
 	height: 200px;
 	padding: 5px;
 	margin: 5px;
+	cursor: pointer;
+	border-radius: 3px;
 }
 
 .portfolio .photos {
