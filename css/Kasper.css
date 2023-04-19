@@ -375,7 +375,7 @@ a {
 .services .container .boxes .box h3 {
 	color: var(--main-color);
 	margin: 10px 10px 10px 0;
-	padding: 5px;
+	padding: 5xp 5px 5px 0;
 }
 
 .services .container .boxes .box div p {
@@ -392,6 +392,7 @@ a {
 	height: 500px;
 	position: relative;
 	overflow: hidden;
+	margin-top: 100px;
 }
 
 .services .back-img img {
@@ -493,17 +494,18 @@ a {
 	margin: 10px 0;
 }
 
+.portfolio .photos {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	row-gap: 25px;
+	margin: 10px 0;
+}
+
 .portfolio .photos img {
-	width: 300px;
-	height: 200px;
-	padding: 5px;
+	width: 325px;
+	height: 225px;
 	margin: 5px;
 	cursor: pointer;
 	border-radius: 3px;
-}
-
-.portfolio .photos {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
 }
