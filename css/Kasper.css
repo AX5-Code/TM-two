@@ -9,12 +9,35 @@
 :root {
 	scroll-behavior: smooth;
 	--main-color: #4ac3ff;
-	caret-color: #4ac3ff;
 }
 
 ::selection {
 	color: #ffffff;
 	background-color: var(--main-color);
+}
+
+::-webkit-progress-bar {
+	background: #f1f0f1;
+	border-radius: 2px;
+}
+
+::-webkit-progress-value {
+	background: var(--main-color);
+	border-radius: 2px;
+}
+
+::-moz-progress-bar {
+	background: var(--main-color);
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+	background: #f1f0f1;
+	width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--main-color);
 }
 
 body {
@@ -265,13 +288,13 @@ a {
 }
 
 .ce {
-	bottom: 100px;
+
+	bottom: 25px;
 	left: 50%;
 	transform: translatex(-50%);
-	width: 50px;
-	height: 20px;
-	position: relative;
+	position: absolute;
 	display: flex;
+
 }
 
 .ce span {
@@ -494,12 +517,12 @@ a {
 	border-radius: 2px;
 }
 
-.portfolio div.bb {
+div.bb {
 	display: flex;
 	justify-content: center;
 }
 
-.portfolio div.bb span {
+div.bb span {
 	padding: 10px 40px;
 	background-color: var(--main-color);
 	color: #f1f0f1;
@@ -515,15 +538,61 @@ a {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	row-gap: 25px;
+	height: fit-content;
 	margin: 10px 0;
+	padding: 30px 0;
+}
+
+.portfolio .photos span {
+	overflow: hidden;
+	width: 340px;
+	height: 235px;
+	border-radius: 3px;
+	position: relative;
+	cursor: pointer;
+}
+
+.portfolio .photos span:hover::before {
+	content: "";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffff6b;
+	transition: 0.3s linear 0.1s;
+	z-index: 99;
+}
+
+.portfolio .photos span:hover img {
+	transition: 0.3s linear 0.1s;
+	transform: rotate(10deg) scale(150%);
 }
 
 .portfolio .photos img {
-	width: 325px;
-	height: 225px;
-	margin: 5px;
+	width: 100%;
+	height: 100%;
 	cursor: pointer;
 	border-radius: 3px;
+}
+
+.portfolio .photos span span {
+	position: absolute;
+	bottom: -30%;
+	left: 0;
+	width: 100%;
+	height: 30%;
+	background: #ffffff;
+	z-index: 81;
+	transition: 0.3s linear 0.1s;
+	border-radius: 0;
+}
+
+.portfolio .photos span:hover span {
+	bottom: 0;
 }
 
 .portfolio .back-img {
@@ -663,43 +732,173 @@ a {
 
 .Screens {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	gap: 30px;
-	margin: 10px;
+	margin: 50px 10px;
 	padding: 5px;
-	/* grid-template-areas: "p p , k k"; */
 }
-
-/* .Testimonials {
-	grid-area: span span;
-
-}
-
-.Skills {
-	grid-area: span span;
-} */
 
 .Testimonials,
 .Skills {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin: 51px 0;
+}
+
+.Testimonials h3,
+.Skills h3 {
+	color: #5b5b5c;
+	font-size: 18px;
+}
+
+.Testimonials>p,
+.Skills>p {
+	font-size: 10px;
+	color: #5b5b5c84;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 5px;
+	width: 80%;
+	line-height: 150%;
+}
+
+
+.Skills .skill {
+	width: 100%;
+}
+
+.Skills .skill p {
+	color: #5b5b5cbc;
+	font-size: 12px;
+	padding: 5px;
+	margin: 10px 0;
+}
+
+
+
+.Skills .skill progress {
+	height: 25px;
+	width: 100%;
+	border: 1px solid var(--main-color);
+	border-radius: 2px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.Skills .skill progress::before {
+	content: "95%";
+	width: 35px;
+	height: 20px;
+	background: #353235;
+	position: absolute;
+	top: -110%;
+	left: 95%;
+	translate: -50%;
+	font-size: 12px;
+	color: #f1f0f1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+
+}
+
+.Skills .skill progress::after {
+	content: "";
+	border: 5px solid;
+	border-color: #353235 transparent transparent transparent;
+	position: absolute;
+	top: -7px;
+	left: 95%;
+	translate: -50%;
+}
+
+.Skills .skill progress:nth-child(4)::before {
+	content: "93%";
+	left: 93%;
+}
+
+.Skills .skill progress:nth-child(4)::after {
+	left: 93%;
+}
+
+.Skills .skill progress:nth-child(6)::before {
+	content: "85%";
+	left: 85%;
+}
+
+.Skills .skill progress:nth-child(6)::after {
+	left: 85%;
+}
+
+.Skills .skill progress:nth-child(8)::before {
+	content: "87%";
+	left: 87%;
+}
+
+.Skills .skill progress:nth-child(8)::after {
+	left: 87%;
 }
 
 .Testimonials .post {
 	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 10px;
+	padding: 5px;
+	height: 40%;
+	align-items: center;
+}
+
+.Testimonials .post img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 5px;
+	padding: 5px;
+}
+
+.Testimonials .post p {
+	font-size: 13px;
+	color: #5b5b5cbc;
+	padding: 10px;
+	margin: 10px;
+	width: 70%;
+	line-height: 2;
+	text-align: start;
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.Testimonials .post p::before {
+	content: "";
+	width: 100%;
+	height: 1px;
+	background: #5b5b5c;
+	position: absolute;
+	bottom: 0;
+}
+
+.Testimonials .post p::after {
+	content: "John Doe,CEO";
+	position: absolute;
+	height: 10px;
+	bottom: 15px;
+	right: 5px;
+	color: #5b5b5c7f;
+	font-style: italic;
 }
 
 .Testimonials .ce {
 	position: unset;
+	transform: translatex(0);
 }
 
 .Testimonials .ce span {
 	border-color: #464646;
-}
-
-.Skills .skill {
-	width: 100%;
 }
 
 .bi3 {
@@ -707,4 +906,8 @@ a {
 	align-items: center;
 	height: 400px;
 	margin-top: 0;
+}
+
+.price {
+	margin-top: 100px;
 }
