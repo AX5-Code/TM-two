@@ -722,11 +722,10 @@ div.bb span {
 	}
 }
 
-.Screens {
+.Screens .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	gap: 30px;
-	margin: 50px 10px;
 	padding: 5px;
 }
 
@@ -794,7 +793,7 @@ div.bb span {
 	align-items: center;
 	justify-content: center;
 	border-radius: 3px;
-	transition: all 0.7s ease-in-out;
+	transition: all 0.7s linear;
 
 }
 
@@ -806,7 +805,7 @@ div.bb span {
 	top: -7px;
 	left: var(--p1, 0);
 	translate: -50%;
-	transition: all 0.7s ease-in-out;
+	transition: all 0.7s linear;
 }
 
 .skill progress:nth-child(4)::before {
@@ -844,7 +843,7 @@ div.bb span {
 ::-webkit-progress-value {
 	background: var(--main-color);
 	border-radius: 2px;
-	transition: all 0.7s ease-in-out;
+	transition: all 0.7s linear;
 }
 
 ::-moz-progress-bar {

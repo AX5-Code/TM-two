@@ -1,22 +1,22 @@
 let sps = document.querySelectorAll(".sp");
 let scr = document.querySelector(".Screens");
-let progs = document.querySelectorAll(".Skills progress");
-let fluty = document.querySelector(".flout");
+let trigger = document.querySelector(".flout");
+//showing or hiding the trigger scroll to top
 window.onscroll = () => {
 	if (scrollY >= 350) {
-		fluty.style.display = "block";
+		trigger.style.display = "block";
 	} else {
-		fluty.style.display = "none";
+		trigger.style.display = "none";
 	}
-	if (window.scrollY >= scr.offsetTop - 150) {
-		progs.forEach((prog) => {
-			prog.value = prog.dataset.vm;
-		});
+	// progress bar value animation
+	if (window.scrollY >= scr.offsetTop - 200) {
 		sps.forEach((sp, i) => {
-			sp.style.setProperty(`--p${i + 1}`, `${sp.dataset.vm}%`);
+			sp.value = sp.dataset.vm;
+			sp.style.setProperty(`--p${++i}`, `${sp.dataset.vm}%`);
 		});
 	}
 };
-fluty.onclick = () => {
+// if clicked the trigger scroll to top
+trigger.onclick = () => {
 	window.scrollTo({ top: "0", behavior: "smooth" });
 };
