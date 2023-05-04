@@ -9,6 +9,8 @@
 :root {
 	scroll-behavior: smooth;
 	--main-color: #4ac3ff;
+	scrollbar-color: var(--main-color)#ffffff;
+	scrollbar-width: thin;
 }
 
 ::selection {
@@ -16,20 +18,6 @@
 	background-color: var(--main-color);
 }
 
-::-webkit-progress-bar {
-	background: #f1f0f1;
-	border-radius: 2px;
-}
-
-::-webkit-progress-value {
-	background: var(--main-color);
-	border-radius: 2px;
-}
-
-::-moz-progress-bar {
-	background: var(--main-color);
-	border-radius: 2px;
-}
 
 ::-webkit-scrollbar {
 	background: #f1f0f1;
@@ -79,6 +67,11 @@ body {
 	border-radius: 50%;
 	cursor: pointer;
 	display: none;
+	transition: all 0.2s ease-in-out;
+}
+
+.flout:hover {
+	background: var(--main-color);
 }
 
 .flout::after {
@@ -562,8 +555,7 @@ div.bb span {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #ffffff6b;
-	transition: 0.3s linear 0.1s;
+	background: #ffffff45;
 	z-index: 99;
 }
 
@@ -587,7 +579,7 @@ div.bb span {
 	height: 30%;
 	background: #ffffff;
 	z-index: 81;
-	transition: 0.3s linear 0.1s;
+	transition: 0.3s ease-in-out;
 	border-radius: 0;
 }
 
@@ -777,23 +769,24 @@ div.bb span {
 
 
 
-.Skills .skill progress {
+.skill progress {
 	height: 25px;
 	width: 100%;
-	border: 1px solid var(--main-color);
+	border: 1px solid #37aaff;
 	border-radius: 2px;
 	margin-bottom: 15px;
 	position: relative;
+
 }
 
-.Skills .skill progress::before {
+.skill progress::before {
 	content: "95%";
 	width: 35px;
 	height: 20px;
 	background: #353235;
 	position: absolute;
 	top: -110%;
-	left: 95%;
+	left: var(--p1, 0);
 	translate: -50%;
 	font-size: 12px;
 	color: #f1f0f1;
@@ -801,44 +794,63 @@ div.bb span {
 	align-items: center;
 	justify-content: center;
 	border-radius: 3px;
+	transition: all 0.7s ease-in-out;
 
 }
 
-.Skills .skill progress::after {
+.skill progress::after {
 	content: "";
 	border: 5px solid;
 	border-color: #353235 transparent transparent transparent;
 	position: absolute;
 	top: -7px;
-	left: 95%;
+	left: var(--p1, 0);
 	translate: -50%;
+	transition: all 0.7s ease-in-out;
 }
 
-.Skills .skill progress:nth-child(4)::before {
+.skill progress:nth-child(4)::before {
 	content: "93%";
-	left: 93%;
+	left: var(--p2, 0);
 }
 
-.Skills .skill progress:nth-child(4)::after {
-	left: 93%;
+.skill progress:nth-child(4)::after {
+	left: var(--p2, 0);
 }
 
-.Skills .skill progress:nth-child(6)::before {
+.skill progress:nth-child(6)::before {
 	content: "85%";
-	left: 85%;
+	left: var(--p3, 0);
 }
 
-.Skills .skill progress:nth-child(6)::after {
-	left: 85%;
+.skill progress:nth-child(6)::after {
+	left: var(--p3, 0);
 }
 
-.Skills .skill progress:nth-child(8)::before {
+.skill progress:nth-child(8)::before {
 	content: "87%";
-	left: 87%;
+	left: var(--p4, 0);
 }
 
-.Skills .skill progress:nth-child(8)::after {
-	left: 87%;
+.skill progress:nth-child(8)::after {
+	left: var(--p4, 0);
+}
+
+::-webkit-progress-bar {
+	background: #f1f0f1;
+	border-radius: 2px;
+}
+
+::-webkit-progress-value {
+	background: var(--main-color);
+	border-radius: 2px;
+	transition: all 0.7s ease-in-out;
+}
+
+::-moz-progress-bar {
+	background: var(--main-color);
+	border-radius: 2px;
+	transition: all 0.7s linear;
 }
 
 .Testimonials .post {
