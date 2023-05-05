@@ -534,6 +534,7 @@ div.bb span {
 	height: fit-content;
 	margin: 10px 0;
 	padding: 30px 0;
+	user-select: none;
 }
 
 .portfolio .photos span {
@@ -545,8 +546,9 @@ div.bb span {
 	cursor: pointer;
 }
 
-.portfolio .photos span:hover::before {
-	content: "";
+.portfolio .photos>span:hover::before {
+	content: "\e43c";
+	font-family: 'Font Awesome 6 free';
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -556,7 +558,7 @@ div.bb span {
 	width: 100%;
 	height: 100%;
 	background: #ffffff45;
-	z-index: 99;
+	z-index: 1;
 }
 
 .portfolio .photos span:hover img {
@@ -578,8 +580,8 @@ div.bb span {
 	width: 100%;
 	height: 30%;
 	background: #ffffff;
-	z-index: 81;
-	transition: 0.3s ease-in-out;
+	z-index: 2;
+	transition: 0.3s linear;
 	border-radius: 0;
 }
 
@@ -779,7 +781,7 @@ div.bb span {
 }
 
 .skill progress::before {
-	content: "95%";
+	content: attr(value);
 	width: 35px;
 	height: 20px;
 	background: #353235;
@@ -793,7 +795,7 @@ div.bb span {
 	align-items: center;
 	justify-content: center;
 	border-radius: 3px;
-	transition: all 0.7s linear;
+	transition: all 1s linear;
 
 }
 
@@ -805,11 +807,11 @@ div.bb span {
 	top: -7px;
 	left: var(--p1, 0);
 	translate: -50%;
-	transition: all 0.7s linear;
+	transition: all 1s linear;
 }
 
 .skill progress:nth-child(4)::before {
-	content: "93%";
+	content: attr(value);
 	left: var(--p2, 0);
 }
 
@@ -818,7 +820,7 @@ div.bb span {
 }
 
 .skill progress:nth-child(6)::before {
-	content: "85%";
+	content: attr(value);
 	left: var(--p3, 0);
 }
 
@@ -827,7 +829,7 @@ div.bb span {
 }
 
 .skill progress:nth-child(8)::before {
-	content: "87%";
+	content: attr(value);
 	left: var(--p4, 0);
 }
 
@@ -843,7 +845,7 @@ div.bb span {
 ::-webkit-progress-value {
 	background: var(--main-color);
 	border-radius: 2px;
-	transition: all 0.7s linear;
+	transition: all 1s linear;
 }
 
 ::-moz-progress-bar {
