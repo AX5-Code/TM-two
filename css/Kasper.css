@@ -51,10 +51,8 @@ body {
 }
 
 .container {
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;
-	margin-right: auto;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 
 .flout {
@@ -936,4 +934,25 @@ div.bb span {
 
 .price {
 	margin-top: 100px;
+}
+
+
+.price .priced-card {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+
+}
+.price .priced-card .p1{
+	text-align: center;
+	width: 200px;
+	margin: 2rem 0;
+}
+
+.price .container h3 {
+	width: 100%;
+	text-align: center;
+	margin: 2rem 0;
+	padding: 1rem;
 }
